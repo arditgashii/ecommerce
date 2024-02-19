@@ -14,7 +14,7 @@ import { createUser,
 import { authenticate, authorizeAdmin } from "../middlewares/authMiddleware.js";
 
 
-const router = express.Router();
+const router = express.Router(); 
 
 router.route("/").
 post(createUser).
