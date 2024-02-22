@@ -75,8 +75,12 @@ const CategoryList = () => {
 
   const handleDeleteCategory = async () => {
     try {
+      console.log('Deleting category:', selectedCategory);
+  
       const result = await deleteCategory(selectedCategory._id).unwrap();
-
+  
+      console.log('Delete result:', result);
+  
       if (result.error) {
         toast.error(result.error);
       } else {
@@ -85,10 +89,18 @@ const CategoryList = () => {
         setModalVisible(false);
       }
     } catch (error) {
-      console.error(error);
-      toast.error("Category delection failed. Tray again.");
+      console.error('Delete category failed:', error);
+  
+      if (error.status === 500) {
+        toast.error("Category deletion failed. Internal Server Error.");
+      } else if (error.status === 404) {
+        toast.error("Category not found. It may have already been deleted.");
+      } else {
+        toast.error("Category deletion failed. Try again.");
+      }
     }
   };
+  
 
   return (
     <div className="ml-[10rem] flex flex-col md:flex-row">
