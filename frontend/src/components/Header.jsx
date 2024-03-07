@@ -16,8 +16,12 @@ const Header = () => {
 
   return (
     <>
+      <div className="flex justify-center items-center w-full h-[10rem]">
+        <h1 className="text-6xl font-bold text-center">Products</h1>
+      </div>
+
       <div className="flex justify-around">
-        <div className="xl:block lg:hidden md:hidden:sm:hidden">
+        <div className="xl:block lg:hidden md:hidden sm:hidden">
           <div className="grid grid-cols-2">
             {data.map((product) => (
               <div key={product._id}>

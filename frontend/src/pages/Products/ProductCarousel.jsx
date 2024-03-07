@@ -23,11 +23,11 @@ const ProductCarousel = () => {
     slidesToScroll: 1,
     arrows: true,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2500,
   };
 
   return (
-    <div className="mb-4 lg:block xl:block md:block">
+    <div className="mb-2 lg:block xl:block md:block">
       {isLoading ? null : error ? (
         <Message variant="danger">
           {error?.data?.message || error.error}
@@ -35,7 +35,7 @@ const ProductCarousel = () => {
       ) : (
         <Slider
           {...settings}
-          className="xl:w-[50rem]  lg:w-[50rem] md:w-[56rem] sm:w-[40rem] sm:block"
+          className="xl:w-[40rem] lg:w-[40rem] md:w-[44rem] sm:w-[30rem] sm:block"
         >
           {products.map(
             ({
@@ -55,44 +55,44 @@ const ProductCarousel = () => {
                 <img
                   src={image}
                   alt={name}
-                  className="w-full rounded-lg object-cover h-[30rem]"
+                  className="w-full rounded-lg object-contain h-[15rem] sm:h-[18rem] md:h-[20rem]"
                 />
 
-                <div className="mt-4 flex justify-between">
+                <div className="mt-2 flex justify-between">
                   <div className="one">
-                    <h2>{name}</h2>
-                    <p> $ {price}</p> <br /> <br />
-                    <p className="w-[25rem]">
-                      {description.substring(0, 170)} ...
+                    <h2 className="text-xs sm:text-sm md:text-base">{name}</h2>
+                    <p className="text-xs sm:text-sm md:text-base">$ {price}</p>
+                    <p className="w-[12rem] text-xs sm:text-sm md:text-base">
+                      {description.substring(0, 70)} ...
                     </p>
                   </div>
 
-                  <div className="flex justify-between w-[20rem]">
+                  <div className="flex justify-between w-[10rem] sm:w-[12rem] md:w-[14rem]">
                     <div className="one">
-                      <h1 className="flex items-center mb-6">
-                        <FaStore className="mr-2 text-white" /> Brand: {brand}
+                      <h1 className="flex items-center mb-1 text-xs sm:text-sm md:text-base">
+                        <FaStore className="mr-1 text-white" /> Brand: {brand}
                       </h1>
-                      <h1 className="flex items-center mb-6">
-                        <FaClock className="mr-2 text-white" /> Added:{" "}
+                      <h1 className="flex items-center mb-1 text-xs sm:text-sm md:text-base">
+                        <FaClock className="mr-1 text-white" /> Added:{" "}
                         {moment(createdAt).fromNow()}
                       </h1>
-                      <h1 className="flex items-center mb-6">
-                        <FaStar className="mr-2 text-white" /> Reviews:
+                      <h1 className="flex items-center mb-1 text-xs sm:text-sm md:text-base">
+                        <FaStar className="mr-1 text-white" /> Reviews:
                         {numReviews}
                       </h1>
                     </div>
 
                     <div className="two">
-                      <h1 className="flex items-center mb-6">
-                        <FaStar className="mr-2 text-white" /> Ratings:{" "}
+                      <h1 className="flex items-center mb-1 text-xs sm:text-sm md:text-base">
+                        <FaStar className="mr-1 text-white" /> Ratings:{" "}
                         {Math.round(rating)}
                       </h1>
-                      <h1 className="flex items-center mb-6">
-                        <FaShoppingCart className="mr-2 text-white" /> Quantity:{" "}
+                      <h1 className="flex items-center mb-1 text-xs sm:text-sm md:text-base">
+                        <FaShoppingCart className="mr-1 text-white" /> Qty:{" "}
                         {quantity}
                       </h1>
-                      <h1 className="flex items-center mb-6">
-                        <FaBox className="mr-2 text-white" /> In Stock:{" "}
+                      <h1 className="flex items-center mb-1 text-xs sm:text-sm md:text-base">
+                        <FaBox className="mr-1 text-white" /> Stock:{" "}
                         {countInStock}
                       </h1>
                     </div>
