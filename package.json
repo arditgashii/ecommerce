@@ -9,7 +9,7 @@
     "frontend": "npm run dev --prefix frontend",
     "dev": "concurrently \"npm run frontend\" \"npm run backend",
     "prebuild": "chmod +x node_modules/.bin/vite",
-    "build": "vite build"
+    "build": "./build.sh"
   },
   "keywords": [],
   "author": "",
