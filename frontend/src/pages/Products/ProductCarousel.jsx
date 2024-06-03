@@ -35,7 +35,7 @@ const ProductCarousel = () => {
       ) : (
         <Slider
           {...settings}
-          className="xl:w-[40rem] lg:w-[40rem] md:w-[44rem] sm:w-[30rem] sm:block"
+          className="xl:w-[35rem] lg:w-[40rem] md:w-[44rem] sm:w-[30rem] sm:block"
         >
           {products.map(
             ({
@@ -58,7 +58,7 @@ const ProductCarousel = () => {
                   className="w-full rounded-lg object-contain h-[15rem] sm:h-[18rem] md:h-[20rem]"
                 />
 
-                <div className="mt-2 flex justify-between">
+                <div className="mt-2 flex justify-evenly">
                   <div className="one">
                     <h2 className="text-xs sm:text-sm md:text-base">{name}</h2>
                     <p className="text-xs sm:text-sm md:text-base">$ {price}</p>
