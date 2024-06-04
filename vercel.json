@@ -27,6 +27,6 @@
       "NODE_VERSION": "16.x",
       "NPM_VERSION": "8.x"
     },
-    "command": "npm install --legacy-peer-deps"
+    "command": "npm install --legacy-peer-deps && npm run build"
   }
 }
