@@ -26,7 +26,6 @@
     "env": {
       "NODE_VERSION": "16.x",
       "NPM_VERSION": "8.x"
-    },
-    "command": "npm run install && npm run build"
+    }
   }
 }
