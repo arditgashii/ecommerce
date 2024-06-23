@@ -8,7 +8,7 @@
     "backend": "nodemon backend/index.js",
     "frontend": "npm run dev --prefix frontend",
     "dev": "concurrently \"npm run frontend\" \"npm run backend\"",
-    "install": "npm install --legacy-peer-deps",
+    "install": "npm install",
     "build": "npm run build:frontend",
     "build:frontend": "npm run build --prefix frontend"
   },
