@@ -1,4 +1,3 @@
-// vite.config.js
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
@@ -14,12 +13,12 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom'] // Separate chunk for vendor libraries
+          vendor: ['react', 'react-dom']
         }
       }
     },
-    chunkSizeWarningLimit: 1000 // Increase limit to 1000 kB
+    chunkSizeWarningLimit: 1000
   },
-  root: './', // Ensure this points to the root of your project
-  publicDir: './public' // Path to your public directory containing index.html
+  root: './', 
+  publicDir: './public'
 });
